@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+: "${VERSION:?Required VERSION env var is not set - exiting.}"
+: "${APPLY_GIT_TAG:?Required APPLY_GIT_TAG env var is not set - exiting.}"
+
+npm install
+
+NODE_ENV=production npm run build
+
+npm publish
+
+git config user.name github-actions
+git config user.email github-actions[bot]@users.noreply.github.com
+
+if [ "$APPLY_GIT_TAG" -eq 0 ]; then
+   echo "APPLY_GIT_TAG set to 0 - skipping tagging this version in git";
+   exit 0
+fi
+
+echo "Applying a Git tag for version ${VERSION}"
+git tag -am "Tagging as version ${VERSION}" "${VERSION}"
+
+echo "Pushing the tag to GitHub"
+git push origin "${VERSION}"
+
+echo "Success: Published and tagged version ${VERSION} of scrollio"

@@ -1,0 +1,120 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: white;
+  background-color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1 {
+  background: repeating-linear-gradient(
+    45deg,
+    #003060,
+    #003060 20px,
+    #055C9D 20px,
+    #055C9D 40px
+  );
+}
+
+.section-1 small {
+  margin-top: 30px;
+}
+
+.section-2 {
+  height: 100vh;
+  position: relative;
+}
+
+.parallax-background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-background-image {
+  position: relative;
+  height: 150%;
+  background-image: url(/public/chicago.jpeg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+}
+
+.section-3 {
+  background-color: #0E86D4;
+}
+
+.multi-1 {
+  margin-bottom: 50px;
+}
+
+h2 span {
+  display: inline-block;
+}
+
+.section-4 {
+  background: white;
+  color: black;
+}
+
+.subtle-grid {
+  max-width: 900px;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.section-4 img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.section-5 {
+  background-color: #68BBE3;
+  overflow-x: hidden;
+}
+
+.section-5 h2 {
+  white-space: nowrap;
+  font-size: 3em;
+  line-height: 1em;
+}

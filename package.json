@@ -1,0 +1,27 @@
+{
+  "name": "scrollio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/scrollio.umd.cjs",
+  "module": "./dist/scrollio.js",
+  "exports": {
+    ".": {
+      "import": "./dist/scrollio.js",
+      "require": "./dist/scrollio.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^1.7.2"
+  }
+}

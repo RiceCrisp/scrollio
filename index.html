@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scrollio Demo</title>
+    <meta name="description" content="Scrollio Demo" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <section class="section-1">
+      <h1 class="scrollio">Scrollio</h1>
+      <small>This headline has the default parallax effect...</small>
+    </section>
+    <section class="section-2">
+      <div class="parallax-background">
+        <div class="parallax-background-image scrollio" data-scrollio-0="top:-50%" data-scrollio-100="top:0%"></div>
+      </div>
+      <h2>Parallax Background</h2>
+    </section>
+    <section class="section-3">
+      <h2
+        class="scrollio multi-1"
+        data-scrollio-0="font-size:1em;color:rgba(0,48,96)"
+        data-scrollio-60="font-size:2em;color:rgba(255,255,255)"
+      >
+        Multiple Properties
+      </h2>
+      <h2 class="multi-2">
+        <span
+          class="scrollio"
+          data-scrollio-0="transform:translate(-100px,50px)"
+          data-scrollio-40="transform:translate(-50px,-50px)"
+          data-scrollio-60="transform:translate(0px,0px)"
+        >
+          Multiple
+        </span>
+        <span
+          class="scrollio"
+          data-scrollio-0="transform:rotate(20deg)translateY(100px)"
+          data-scrollio-30="transform:rotate(-20deg)translateY(50px)"
+          data-scrollio-60="transform:rotate(0deg)translateY(0px)"
+        >
+          Animation
+        </span>
+        <span
+          class="scrollio"
+          data-scrollio-0="transform:translate(10px,10px)"
+          data-scrollio-10="transform:translate(30px,30px)"
+          data-scrollio-20="transform:translate(70px,20px)"
+          data-scrollio-30="transform:translate(20px,80px)"
+          data-scrollio-40="transform:translate(40px,20px)"
+          data-scrollio-50="transform:translate(80px,90px)"
+          data-scrollio-60="transform:translate(0px,0px)"
+        >
+          Points
+        </span>
+      </h2>
+    </section>
+    <section class="section-4">
+      <div class="subtle-grid">
+        <div
+          class="scrollio"
+          data-scrollio-10="opacity:0;transform:translateX(-30px)"
+          data-scrollio-30="opacity:1;transform:translateX(0px)"
+        >
+          <h2>Subtle Example</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div>
+          <img
+            class="scrollio"
+            data-scrollio-10="opacity:0;transform:translateX(30px)"
+            data-scrollio-30="opacity:1;transform:translateX(0px)"
+            src="/public/chicago.jpeg"
+            alt="Chicago skyline"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section-5">
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(100px)"
+        data-scrollio-100="transform:translateX(-100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(-100px)"
+        data-scrollio-100="transform:translateX(100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(100px)"
+        data-scrollio-100="transform:translateX(-100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(-100px)"
+        data-scrollio-100="transform:translateX(100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(100px)"
+        data-scrollio-100="transform:translateX(-100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(-100px)"
+        data-scrollio-100="transform:translateX(100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+      <h2
+        class="scrollio"
+        data-scrollio-0="transform:translateX(100px)"
+        data-scrollio-100="transform:translateX(-100px)"
+      >
+        THE END THE END THE END THE END THE END THE END THE END THE END THE END
+      </h2>
+    </section>
+  </body>
+  <script type="module" src="/src/index.ts"></script>
+</html>

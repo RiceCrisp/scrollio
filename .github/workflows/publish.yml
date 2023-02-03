@@ -1,0 +1,39 @@
+name: "Publishes a named version of the library."
+
+on:
+  workflow_dispatch:
+    inputs:
+      versionName:
+        description: "The name of the version to publish - ex. 0.0.0-FIME-1817"
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Verify the requested version is unique"
+        env:
+          VERSION: ${{ github.event.inputs.versionName }}
+        run: ./scripts/verify-version-is-unique
+
+      - name: "Update package.json and lock file to the new version"
+        env:
+          RT_NPM_AUTH_TOKEN: ${{ secrets.RT_NPM_AUTH_TOKEN }}
+          VERSION: ${{ github.event.inputs.versionName }}
+        run: npm --no-git-tag-version version $VERSION
+
+      - name: "Build and publish the library without tagging it in git"
+        env:
+          RT_NPM_AUTH_TOKEN: ${{ secrets.RT_NPM_AUTH_TOKEN }}
+          VERSION: ${{ github.event.inputs.versionName }}
+        run: |
+          docker run --rm \
+            -w /epistemix-spa-core \
+            --env APPLY_GIT_TAG=0 \
+            --env RT_NPM_AUTH_TOKEN \
+            --env VERSION \
+            -v $(pwd):/epistemix-spa-core \
+            node:16.3-buster \
+            ./scripts/publish

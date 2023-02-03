@@ -1,0 +1,26 @@
+name: "Main Push Workflow"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Verify version is unique
+        id: package-version
+        run: ./scripts/verify-version-is-unique
+
+      - name: Build and publish
+        env:
+          VERSION: ${{ steps.package-version.outputs.VERSION }}
+          APPLY_GIT_TAG: 1
+        run: ./scripts/publish
